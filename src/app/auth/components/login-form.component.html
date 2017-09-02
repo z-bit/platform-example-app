@@ -1,0 +1,38 @@
+<md-card>
+    <md-card-title>Login</md-card-title>
+    <md-card-content>
+        <form [formGroup]="form" (ngSubmit)="submit()">
+
+            <p>
+                <md-input-container>
+                    <input mdInput
+                           type="text"
+                           placeholder="Username"
+                           fromControlName="username"
+                    >
+                </md-input-container>
+            </p>
+
+            <p>
+                <md-input-container>
+                    <input mdInput
+                           type="password"
+                           placeholder="Password"
+                           fromControlName="password"
+                    >
+                </md-input-container>
+            </p>
+
+            <p *ngIf="errorMessage" class="loginError">
+               {{ errorMessage }}
+            </p>
+
+            <p class="loginButtons">
+                <button md-button type="submit">
+                    Login
+                </button>
+            </p>
+
+        </form>
+    </md-card-content>
+</md-card>
